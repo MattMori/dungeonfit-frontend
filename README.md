@@ -1,21 +1,45 @@
-# DungeonFit Dungeon Theme Patch
+# DungeonFit Frontend
 
-Substitua estes arquivos no frontend atual para trocar a estética de "app de academia" para "grimório/masmorra/RPG".
+Frontend em React + Vite pronto para integrar com o backend do DungeonFit.
 
-## Arquivos
-
-- `src/styles/global.css`
-- `src/layouts/AuthLayout.jsx`
-- `src/layouts/AppLayout.jsx`
-- `src/components/PageHeader.jsx`
-- `src/components/StatCard.jsx`
-
-## Como aplicar
-
-Copie as pastas `src` deste patch para dentro do projeto frontend atual e aceite substituir os arquivos existentes.
-
-Depois rode:
+## Rodar localmente
 
 ```bash
+npm install
+cp .env.example .env
 npm run dev
 ```
+
+No `.env`, ajuste a URL do backend:
+
+```env
+VITE_API_URL=http://localhost:3000
+```
+
+## Páginas prontas
+
+- Login
+- Cadastro
+- Dashboard
+- Personagem
+- Atividades
+- Criar atividade
+- Histórico
+- Progresso
+- Recompensas
+- Ranking
+- Perfil
+
+## Rotas esperadas do backend
+
+- `/auth`
+- `/users`
+- `/characters`
+- `/activities`
+- `/activity-logs`
+- `/progress`
+- `/rewards`
+- `/dashboard`
+- `/rankings`
+
+Também há fallback para algumas rotas legadas: `/users/buscar`, `/users/atualizar` e `/rankings/listar`.
