@@ -1,0 +1,5 @@
+import { CheckCircle2, Clock, Flame, Sparkles } from "lucide-react";
+export default function ActivityCard({ activity, onComplete, completing }) {
+  const id = activity?._id || activity?.id;
+  return <article className="activity-card"><div className="activity-card-header"><div><span className={`tag tag-${activity?.type || "custom"}`}>{activity?.type || "custom"}</span><h3>{activity?.name || activity?.title || "Atividade sem nome"}</h3></div><strong className="xp-badge">+{activity?.xp || 0} XP</strong></div>{activity?.description && <p>{activity.description}</p>}<div className="activity-meta"><span><Clock size={15} />{activity?.duration_min || activity?.duration || 0} min</span><span><Flame size={15} />{activity?.difficulty || "normal"}</span><span><Sparkles size={15} />{activity?.category || "geral"}</span></div><button className="primary-button full" disabled={completing} onClick={() => onComplete?.(id)}><CheckCircle2 size={18} />{completing ? "Concluindo..." : "Concluir atividade"}</button></article>;
+}
