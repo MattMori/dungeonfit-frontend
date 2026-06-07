@@ -1,18 +1,20 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
   BookOpen,
   Castle,
   Crown,
   Flame,
   History,
-  LayoutDashboard,
   LogOut,
+  Menu,
   ScrollText,
   Shield,
   Skull,
   Sparkles,
   Trophy,
   User,
+  X,
 } from "lucide-react";
 
 import { useAuth } from "../context/AuthContext";
@@ -31,23 +33,81 @@ const links = [
 export default function AppLayout() {
   const { logout, user } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   function handleLogout() {
     logout();
     navigate("/login");
   }
 
+  function closeMenu() {
+    setIsMenuOpen(false);
+  }
+
+  useEffect(() => {
+    setIsMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    document.body.classList.toggle("mobile-menu-open", isMenuOpen);
+
+    return () => {
+      document.body.classList.remove("mobile-menu-open");
+    };
+  }, [isMenuOpen]);
+
   return (
     <div className="app-shell dungeon-shell">
-      <aside className="sidebar">
-        <div className="brand">
-          <div className="brand-mark">
-            <Skull size={23} />
+      <button
+        className="mobile-menu-button"
+        type="button"
+        onClick={() => setIsMenuOpen(true)}
+        aria-label="Abrir menu"
+      >
+        <Menu size={22} />
+      </button>
+
+      <div
+        className={`sidebar-overlay ${isMenuOpen ? "active" : ""}`}
+        onClick={closeMenu}
+        aria-hidden="true"
+      />
+
+      <aside className={`sidebar ${isMenuOpen ? "open" : ""}`}>
+        <div className="mobile-sidebar-header">
+          <div className="brand">
+            <div className="brand-mark">
+              <Skull size={23} />
+            </div>
+
+            <div>
+              <strong>DungeonFit</strong>
+              <span>Grimório de progressão</span>
+            </div>
           </div>
 
-          <div>
-            <strong>DungeonFit</strong>
-            <span>Grimório de progressão</span>
+          <button
+            className="mobile-menu-close"
+            type="button"
+            onClick={closeMenu}
+            aria-label="Fechar menu"
+          >
+            <X size={21} />
+          </button>
+        </div>
+
+        <div className="desktop-brand">
+          <div className="brand">
+            <div className="brand-mark">
+              <Skull size={23} />
+            </div>
+
+            <div>
+              <strong>DungeonFit</strong>
+              <span>Grimório de progressão</span>
+            </div>
           </div>
         </div>
 

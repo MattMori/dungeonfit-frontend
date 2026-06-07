@@ -1,10 +1,28 @@
 import api from "./api";
-export async function getCharacter() {
-  try { const { data } = await api.get("/characters/me"); return data; }
-  catch (error) { if ([404,405].includes(error.response?.status)) { const { data } = await api.get("/characters"); return data; } throw error; }
+
+function unwrapResponse(response) {
+  return response?.data?.data || response?.data?.character || response?.data;
 }
-export async function createCharacter(payload) { const { data } = await api.post("/characters", payload); return data; }
-export async function updateCharacter(payload) {
-  try { const { data } = await api.patch("/characters/me", payload); return data; }
-  catch (error) { if ([404,405].includes(error.response?.status)) { const { data } = await api.patch("/characters", payload); return data; } throw error; }
+
+export async function getCharacter() {
+  const response = await api.get("/CharacterSheet/");
+  return unwrapResponse(response);
+}
+
+export async function createCharacter(payload) {
+  const response = await api.post("/CharacterSheet/", payload);
+  return unwrapResponse(response);
+}
+
+export async function addCharacterExperience(pontos_experiencia) {
+  const response = await api.patch("/CharacterSheet/xp", {
+    pontos_experiencia,
+  });
+
+  return unwrapResponse(response);
+}
+
+export async function levelUpCharacter() {
+  const response = await api.patch("/CharacterSheet/level-up");
+  return unwrapResponse(response);
 }
