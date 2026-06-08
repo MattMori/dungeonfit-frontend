@@ -1,33 +1,133 @@
 import { useEffect, useState } from "react";
 import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
 import {
+  Bell,
   BookOpen,
+  Bookmark,
   Castle,
+  Coins,
   Crown,
   Flame,
   History,
-  LogOut,
-  Menu,
+  Package,
   ScrollText,
   Shield,
+  ShoppingBag,
   Skull,
   Sparkles,
   Trophy,
   User,
-  X,
+  WandSparkles,
 } from "lucide-react";
 
 import { useAuth } from "../context/AuthContext";
 
-const links = [
-  { to: "/dashboard", label: "Salão da Guilda", icon: Castle },
-  { to: "/personagem", label: "Ficha do Herói", icon: Shield },
-  { to: "/atividades", label: "Missões", icon: ScrollText },
-  { to: "/historico", label: "Crônicas", icon: History },
-  { to: "/progresso", label: "Evolução", icon: Flame },
-  { to: "/recompensas", label: "Relíquias", icon: Sparkles },
-  { to: "/ranking", label: "Hall dos Heróis", icon: Trophy },
-  { to: "/perfil", label: "Conta", icon: User },
+const menuItems = [
+  {
+    label: "A Taverna",
+    path: "/taverna",
+    icon: BookOpen,
+  },
+  {
+    label: "Primeira Jornada",
+    path: "/primeira-jornada",
+    icon: Sparkles,
+  },
+  {
+    label: "Meu Perfil",
+    path: "/meu-perfil",
+    icon: User,
+  },
+  {
+    label: "Rotina",
+    path: "/rotina",
+    icon: Flame,
+  },
+  {
+    label: "Boss Semanal",
+    path: "/boss-semanal",
+    icon: Skull,
+  },
+  {
+    label: "Campanhas",
+    path: "/campanhas",
+    icon: BookOpen,
+  },
+  {
+    label: "Salvas",
+    path: "/campanhas/salvas",
+    icon: Bookmark,
+  },
+  {
+    label: "Modo Mestre",
+    path: "/minhas-campanhas",
+    icon: Crown,
+  },
+  {
+    label: "Guildas",
+    path: "/guildas",
+    icon: Castle,
+  },
+  {
+    label: "Ficha",
+    path: "/personagem",
+    icon: Shield,
+  },
+  {
+    label: "Inventário",
+    path: "/inventario",
+    icon: Package,
+  },
+  {
+    label: "Loja",
+    path: "/loja",
+    icon: ShoppingBag,
+  },
+  {
+    label: "Carteira",
+    path: "/carteira",
+    icon: Coins,
+  },
+  {
+    label: "Grimório",
+    path: "/grimorio",
+    icon: WandSparkles,
+  },
+  {
+    label: "Missões Reais",
+    path: "/missoes",
+    icon: ScrollText,
+  },
+  {
+    label: "Crônicas",
+    path: "/cronicas",
+    icon: History,
+  },
+  {
+    label: "Relíquias",
+    path: "/reliquias",
+    icon: Sparkles,
+  },
+  {
+    label: "Evolução",
+    path: "/evolucao",
+    icon: Flame,
+  },
+  {
+    label: "Ranking",
+    path: "/ranking",
+    icon: Trophy,
+  },
+  {
+    label: "Notificações",
+    path: "/notificacoes",
+    icon: Bell,
+  },
+  {
+    label: "Conta",
+    path: "/conta",
+    icon: User,
+  },
 ];
 
 export default function AppLayout() {
@@ -83,7 +183,7 @@ export default function AppLayout() {
             </div>
 
             <div>
-              <strong>DungeonFit</strong>
+              <strong>Cronarium</strong>
               <span>Grimório de progressão</span>
             </div>
           </div>
@@ -105,7 +205,7 @@ export default function AppLayout() {
             </div>
 
             <div>
-              <strong>DungeonFit</strong>
+              <strong>Cronarium</strong>
               <span>Grimório de progressão</span>
             </div>
           </div>
@@ -117,15 +217,21 @@ export default function AppLayout() {
         </div>
 
         <nav className="nav-list">
-          {links.map(({ to, label, icon: Icon }) => (
-            <NavLink key={to} to={to} className="nav-item">
+          {menuItems.map(({ path, label, icon: Icon }) => (
+            <NavLink
+              key={path}
+              to={path}
+              className={({ isActive }) =>
+                isActive ? "nav-item active" : "nav-item"
+              }
+            >
               <Icon size={18} />
               <span>{label}</span>
             </NavLink>
           ))}
         </nav>
 
-        <button className="logout-button" onClick={handleLogout}>
+        <button className="logout-button" type="button" onClick={handleLogout}>
           <LogOut size={18} />
           Sair da taverna
         </button>
@@ -135,12 +241,14 @@ export default function AppLayout() {
         <header className="topbar">
           <div>
             <span className="eyebrow">Campanha ativa</span>
-            <strong>DungeonFit: Crônicas do Corpo Real</strong>
+            <strong>Cronarium: Crônicas do Corpo Real</strong>
           </div>
 
           <div className="user-pill">
             <Crown size={16} />
-            <span>{user?.username || user?.name || "Aventureiro"}</span>
+            <span>
+              {user?.username || user?.name || user?.nome || "Aventureiro"}
+            </span>
           </div>
         </header>
 

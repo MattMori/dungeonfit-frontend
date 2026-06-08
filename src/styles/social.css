@@ -1,0 +1,326 @@
+.social-page {
+  display: grid;
+  gap: 22px;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 18px;
+}
+
+.social-stack {
+  display: grid;
+  gap: 18px;
+  align-content: start;
+}
+
+.profile-card,
+.social-panel,
+.social-form,
+.guild-card,
+.guild-hero,
+.social-section,
+.guild-feed-item {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px;
+}
+
+.profile-avatar {
+  width: 88px;
+  height: 88px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 28px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+  font-family: Cinzel, Georgia, serif;
+  font-size: 2rem;
+  font-weight: 900;
+}
+
+.profile-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-card h2,
+.social-form h2,
+.social-panel h2,
+.social-section h2,
+.guild-card h2,
+.guild-hero h1 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  line-height: 1;
+}
+
+.guild-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  letter-spacing: -0.07em;
+}
+
+.profile-card h2,
+.guild-card h2 {
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  letter-spacing: -0.05em;
+}
+
+.profile-card p,
+.social-panel p,
+.social-form p,
+.guild-card p,
+.guild-hero p,
+.guild-feed-item p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.profile-title,
+.profile-character-line,
+.guild-meta-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin-top: 10px;
+  padding: 8px 10px;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 999px;
+  color: var(--gold-2);
+  background: rgba(214, 167, 95, 0.08);
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.profile-stat-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 16px 0;
+}
+
+.profile-stat-row span {
+  display: grid;
+  gap: 4px;
+  min-width: 95px;
+  padding: 12px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 16px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.16);
+  font-size: 0.82rem;
+}
+
+.profile-stat-row strong {
+  color: #fff2dc;
+  font-size: 1.4rem;
+}
+
+.social-form,
+.social-panel,
+.social-section {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.social-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.social-form input,
+.social-form textarea,
+.social-form select {
+  width: 100%;
+  border: 1px solid rgba(214, 167, 95, 0.22);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.social-form textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.privacy-box {
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.checkbox-label {
+  grid-template-columns: auto 1fr !important;
+  align-items: center;
+}
+
+.social-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.social-panel-heading svg {
+  color: var(--gold-2);
+}
+
+.title-selector-list,
+.social-mini-list,
+.guild-ranking-list,
+.guild-feed-list {
+  display: grid;
+  gap: 10px;
+}
+
+.title-selector-list button,
+.social-mini-list a,
+.guild-ranking-list article {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 16px;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.16);
+  text-align: left;
+  text-decoration: none;
+}
+
+.title-selector-list button {
+  cursor: pointer;
+}
+
+.title-selector-list button.active {
+  border-color: rgba(214, 167, 95, 0.5);
+  color: var(--gold-2);
+}
+
+.social-mini-list strong,
+.guild-ranking-list strong,
+.guild-ranking-list a,
+.guild-feed-item h3,
+.guild-feed-item a {
+  color: #fff2dc;
+  text-decoration: none;
+}
+
+.social-mini-list span,
+.guild-ranking-list span {
+  color: var(--muted);
+}
+
+.guild-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.guild-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 16px;
+  padding: 18px;
+}
+
+.guild-icon,
+.feed-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.guild-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0;
+}
+
+.guild-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.guild-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.guild-ranking-list article {
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+}
+
+.guild-ranking-list strong:first-child {
+  color: var(--gold-2);
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.5rem;
+}
+
+.guild-feed-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 16px;
+}
+
+.guild-feed-item strong {
+  color: var(--gold-2);
+}
+
+.ghost-button.danger {
+  border-color: rgba(255, 100, 100, 0.28);
+  color: #ffb4b4;
+}
+
+@media (max-width: 980px) {
+  .social-grid,
+  .guild-grid,
+  .guild-hero,
+  .profile-card,
+  .guild-card,
+  .guild-feed-item {
+    grid-template-columns: 1fr;
+  }
+
+  .guild-hero-actions {
+    justify-content: flex-start;
+  }
+}

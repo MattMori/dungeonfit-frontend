@@ -1,0 +1,219 @@
+.admin-page {
+  display: grid;
+  gap: 22px;
+}
+
+.admin-metric-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.admin-metric-card,
+.admin-panel,
+.admin-form-panel,
+.admin-empty-table {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.admin-metric-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px;
+}
+
+.admin-metric-card span,
+.admin-metric-card small {
+  color: var(--muted);
+}
+
+.admin-metric-card strong {
+  display: block;
+  margin-top: 8px;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 0.9;
+}
+
+.admin-metric-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.admin-panel,
+.admin-form-panel {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.admin-panel h2,
+.admin-form-panel h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.admin-feed-list {
+  display: grid;
+  gap: 10px;
+}
+
+.admin-feed-list article {
+  display: grid;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.admin-feed-list strong {
+  color: #fff2dc;
+}
+
+.admin-feed-list span {
+  color: var(--muted);
+}
+
+.admin-table-wrapper {
+  overflow: auto;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 22px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 820px;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(214, 167, 95, 0.1);
+  text-align: left;
+  color: var(--muted);
+  vertical-align: top;
+}
+
+.admin-table th {
+  color: var(--gold-2);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.admin-table td:first-child {
+  color: #fff2dc;
+  font-weight: 900;
+}
+
+.admin-empty-table {
+  padding: 20px;
+  color: var(--muted);
+}
+
+.report-status-badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 7px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  color: var(--gold-2);
+  background: rgba(214, 167, 95, 0.08);
+  font-weight: 900;
+  font-size: 0.78rem;
+}
+
+.report-status-badge.open {
+  color: #ffb4b4;
+}
+
+.report-status-badge.resolved {
+  color: #b8ffca;
+}
+
+.moderation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.ghost-button.warning {
+  border-color: rgba(255, 190, 100, 0.28);
+  color: #ffd38a;
+}
+
+.ghost-button.danger {
+  border-color: rgba(255, 100, 100, 0.28);
+  color: #ffb4b4;
+}
+
+.admin-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.admin-form-grid label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.admin-form-grid input,
+.admin-form-grid select,
+.admin-form-grid textarea {
+  width: 100%;
+  border: 1px solid rgba(214, 167, 95, 0.22);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.admin-form-grid textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.admin-form-wide {
+  grid-column: 1 / -1;
+}
+
+.admin-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 1080px) {
+  .admin-metric-grid,
+  .admin-form-grid,
+  .admin-grid-two {
+    grid-template-columns: 1fr;
+  }
+}

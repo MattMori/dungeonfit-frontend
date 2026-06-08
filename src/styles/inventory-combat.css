@@ -1,0 +1,155 @@
+.inventory-page {
+  display: grid;
+  gap: 22px;
+}
+
+.inventory-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.inventory-tabs button {
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  padding: 10px 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.inventory-tabs button.active {
+  color: #211006;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.inventory-item-card,
+.combat-resource-panel,
+.resource-tracker {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.inventory-item-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+}
+
+.inventory-item-card.equipped {
+  border-color: rgba(214, 167, 95, 0.46);
+}
+
+.inventory-item-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.inventory-item-card h3,
+.combat-resource-panel h2,
+.resource-tracker h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  line-height: 1;
+  font-size: clamp(1.4rem, 3vw, 2.4rem);
+}
+
+.inventory-item-card p,
+.combat-resource-panel p,
+.resource-tracker p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.inventory-meta-row,
+.inventory-actions,
+.resource-chip-list,
+.resource-effect-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.inventory-meta-row span,
+.resource-chip-list span,
+.resource-effect-list span {
+  width: fit-content;
+  padding: 7px 10px;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 999px;
+  color: var(--gold-2);
+  background: rgba(214, 167, 95, 0.08);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.combat-resource-panel,
+.resource-tracker {
+  display: grid;
+  gap: 12px;
+  padding: 16px;
+}
+
+.combat-resource-list {
+  display: grid;
+  gap: 8px;
+}
+
+.resource-action-card {
+  display: grid;
+  gap: 4px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 16px;
+  color: inherit;
+  background: rgba(0, 0, 0, 0.18);
+  text-align: left;
+  cursor: pointer;
+}
+
+.resource-action-card:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.resource-action-card strong {
+  color: #fff2dc;
+}
+
+.resource-action-card span {
+  color: var(--muted);
+}
+
+.resource-tracker {
+  margin-top: 14px;
+}
+
+@media (max-width: 980px) {
+  .inventory-grid,
+  .inventory-item-card {
+    grid-template-columns: 1fr;
+  }
+}

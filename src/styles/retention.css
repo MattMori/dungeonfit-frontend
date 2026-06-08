@@ -1,0 +1,263 @@
+.retention-page {
+  display: grid;
+  gap: 22px;
+}
+
+.notification-bell {
+  position: relative;
+}
+
+.notification-bell > button {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(214, 167, 95, 0.22);
+  border-radius: 14px;
+  color: var(--gold-2);
+  background: rgba(0, 0, 0, 0.22);
+  cursor: pointer;
+}
+
+.notification-bell > button span {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 22px;
+  height: 22px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #211006;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+  font-size: 0.75rem;
+  font-weight: 950;
+}
+
+.notification-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 50;
+  width: min(360px, calc(100vw - 30px));
+  display: grid;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.22);
+  border-radius: 20px;
+  background: rgba(18, 12, 10, 0.98);
+  box-shadow: var(--shadow);
+}
+
+.notification-dropdown strong {
+  color: #fff2dc;
+}
+
+.notification-dropdown a {
+  display: grid;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid rgba(214, 167, 95, 0.12);
+  border-radius: 14px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.16);
+  text-decoration: none;
+}
+
+.notification-dropdown a.read {
+  opacity: 0.62;
+}
+
+.notification-dropdown small,
+.notification-dropdown p {
+  color: var(--muted);
+}
+
+.notification-view-all {
+  text-align: center;
+  color: var(--gold-2) !important;
+}
+
+.notification-list,
+.routine-mission-list {
+  display: grid;
+  gap: 14px;
+}
+
+.notification-card,
+.streak-card,
+.weekly-boss-card,
+.routine-mission-card,
+.retention-panel,
+.weekly-boss-detail {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.15), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.notification-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+}
+
+.notification-card.read {
+  opacity: 0.68;
+}
+
+.notification-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.notification-card h3,
+.streak-card h2,
+.weekly-boss-card h2,
+.routine-mission-card h3,
+.retention-panel h2,
+.weekly-boss-detail h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  line-height: 1;
+}
+
+.streak-card h2,
+.weekly-boss-card h2,
+.retention-panel h2,
+.weekly-boss-detail h2 {
+  font-size: clamp(1.9rem, 4vw, 3.7rem);
+  letter-spacing: -0.06em;
+}
+
+.notification-card p,
+.streak-card p,
+.weekly-boss-card p,
+.routine-mission-card p,
+.retention-panel p,
+.weekly-boss-detail p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.notification-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.routine-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 18px;
+}
+
+.streak-card,
+.weekly-boss-card,
+.routine-mission-card,
+.weekly-boss-detail {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(20px, 4vw, 30px);
+}
+
+.streak-card svg,
+.weekly-boss-card svg,
+.weekly-boss-detail > svg {
+  color: var(--gold-2);
+}
+
+.retention-panel {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.boss-progress-box {
+  display: grid;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.boss-progress-box > div:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #fff2dc;
+}
+
+.boss-progress-box span {
+  color: var(--gold-2);
+  font-weight: 900;
+}
+
+.boss-progress-track {
+  overflow: hidden;
+  height: 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.boss-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7e1b25, var(--gold-2));
+}
+
+.weekly-boss-detail {
+  min-height: 420px;
+}
+
+.boss-reward-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.boss-reward-grid article {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 18px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.boss-reward-grid svg {
+  color: var(--gold-2);
+}
+
+@media (max-width: 920px) {
+  .routine-grid,
+  .streak-card,
+  .weekly-boss-card,
+  .routine-mission-card,
+  .weekly-boss-detail,
+  .notification-card {
+    grid-template-columns: 1fr;
+  }
+
+  .boss-reward-grid {
+    grid-template-columns: 1fr;
+  }
+}

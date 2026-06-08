@@ -5,17 +5,17 @@ function unwrapResponse(response) {
 }
 
 export async function getCharacter() {
-  const response = await api.get("/CharacterSheet/");
+  const response = await api.get("/characters/me");
   return unwrapResponse(response);
 }
 
 export async function createCharacter(payload) {
-  const response = await api.post("/CharacterSheet/", payload);
+  const response = await api.post("/characters/me", payload);
   return unwrapResponse(response);
 }
 
 export async function addCharacterExperience(pontos_experiencia) {
-  const response = await api.patch("/CharacterSheet/xp", {
+  const response = await api.post("/characters/me/experience", {
     pontos_experiencia,
   });
 
@@ -23,6 +23,6 @@ export async function addCharacterExperience(pontos_experiencia) {
 }
 
 export async function levelUpCharacter() {
-  const response = await api.patch("/CharacterSheet/level-up");
+  const response = await api.post("/characters/me/level-up");
   return unwrapResponse(response);
 }

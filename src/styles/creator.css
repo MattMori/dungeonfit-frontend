@@ -1,0 +1,185 @@
+.creator-page {
+  display: grid;
+  gap: 22px;
+}
+
+.creator-campaign-grid,
+.creator-chapter-list {
+  display: grid;
+  gap: 16px;
+}
+
+.creator-campaign-card,
+.creator-editor-hero,
+.creator-form,
+.creator-chapter-card,
+.creator-choice-card,
+.creator-choice-list {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.creator-campaign-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  padding: 20px;
+}
+
+.creator-campaign-icon {
+  width: 66px;
+  height: 66px;
+  display: grid;
+  place-items: center;
+  border-radius: 22px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.creator-campaign-card h2,
+.creator-editor-hero h1,
+.creator-form h2,
+.creator-chapters-section h2,
+.creator-choice-list h2,
+.creator-choice-card h3,
+.creator-chapter-card h3 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  line-height: 1;
+}
+
+.creator-editor-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4.8rem);
+  letter-spacing: -0.07em;
+}
+
+.creator-campaign-card h2 {
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  letter-spacing: -0.05em;
+}
+
+.creator-campaign-card p,
+.creator-editor-hero p,
+.creator-form p,
+.creator-choice-card p,
+.creator-chapter-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.creator-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.creator-meta-row span,
+.status-chip {
+  width: fit-content;
+  padding: 8px 10px;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 999px;
+  color: var(--gold-2);
+  background: rgba(214, 167, 95, 0.08);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.creator-actions,
+.creator-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.creator-editor-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 20px;
+  align-items: center;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.creator-form {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.creator-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.creator-form input,
+.creator-form textarea,
+.creator-form select {
+  width: 100%;
+  border: 1px solid rgba(214, 167, 95, 0.22);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.creator-form textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.creator-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.creator-editor-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 18px;
+}
+
+.creator-chapters-section,
+.creator-section-heading {
+  display: grid;
+  gap: 14px;
+}
+
+.creator-chapter-card,
+.creator-choice-card,
+.creator-choice-list {
+  padding: 18px;
+}
+
+.creator-choice-list {
+  display: grid;
+  gap: 14px;
+  align-content: start;
+}
+
+.ghost-button.danger {
+  border-color: rgba(255, 100, 100, 0.28);
+  color: #ffb4b4;
+}
+
+@media (max-width: 960px) {
+  .creator-campaign-card,
+  .creator-editor-hero,
+  .creator-editor-grid,
+  .creator-form-grid {
+    grid-template-columns: 1fr;
+  }
+}

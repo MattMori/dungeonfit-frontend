@@ -1,0 +1,223 @@
+.onboarding-page {
+  display: grid;
+  gap: 22px;
+}
+
+.welcome-journey,
+.onboarding-progress,
+.onboarding-panel,
+.goal-card,
+.first-journey-hero,
+.starter-reward-card,
+.journey-step-card {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.15), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.welcome-journey,
+.first-journey-hero {
+  min-height: 420px;
+  display: grid;
+  align-items: center;
+  padding: clamp(26px, 6vw, 58px);
+}
+
+.welcome-journey h1,
+.first-journey-hero h1 {
+  max-width: 900px;
+  margin: 10px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(3.4rem, 8vw, 7.8rem);
+  line-height: 0.9;
+  letter-spacing: -0.08em;
+}
+
+.welcome-journey p,
+.first-journey-hero p,
+.onboarding-panel p,
+.goal-card p,
+.starter-reward-card p,
+.journey-step-card p,
+.onboarding-progress p {
+  max-width: 760px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.welcome-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.onboarding-progress {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.onboarding-progress h2,
+.onboarding-panel h2,
+.starter-reward-card h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.onboarding-progress-track {
+  overflow: hidden;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.onboarding-progress-track span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #7e1b25, var(--gold-2));
+}
+
+.onboarding-panel {
+  display: grid;
+  gap: 18px;
+  padding: 22px;
+}
+
+.onboarding-panel-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.goal-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.goal-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  width: 100%;
+  padding: 18px;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.goal-card.selected {
+  border-color: rgba(214, 167, 95, 0.56);
+}
+
+.goal-card:disabled {
+  opacity: 0.72;
+  cursor: not-allowed;
+}
+
+.goal-card h3,
+.journey-step-card h3 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.4rem, 3vw, 2.3rem);
+  line-height: 1;
+}
+
+.goal-card svg {
+  color: var(--gold-2);
+}
+
+.first-journey-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 18px;
+}
+
+.starter-reward-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+}
+
+.starter-reward-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.starter-reward-grid article {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 18px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.starter-reward-grid svg {
+  color: var(--gold-2);
+}
+
+.journey-step-list {
+  display: grid;
+  gap: 10px;
+}
+
+.journey-step-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px;
+  padding: 14px;
+}
+
+.journey-step-card.completed {
+  border-color: rgba(214, 167, 95, 0.45);
+}
+
+.journey-step-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+@media (max-width: 900px) {
+  .goal-grid,
+  .first-journey-grid,
+  .starter-reward-grid,
+  .goal-card,
+  .journey-step-card,
+  .onboarding-panel-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .onboarding-panel-heading {
+    display: grid;
+  }
+
+  .welcome-journey,
+  .first-journey-hero {
+    min-height: auto;
+  }
+}

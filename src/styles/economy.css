@@ -1,0 +1,197 @@
+.economy-page {
+  display: grid;
+  gap: 22px;
+}
+
+.wallet-summary,
+.shop-item-card,
+.transaction-panel {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.15), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.wallet-summary {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.wallet-summary h2,
+.shop-item-card h3,
+.transaction-panel h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  line-height: 1;
+}
+
+.wallet-summary h2 {
+  font-size: clamp(2.4rem, 6vw, 5.2rem);
+  letter-spacing: -0.07em;
+}
+
+.shop-item-card h3,
+.transaction-panel h2 {
+  font-size: clamp(1.5rem, 3vw, 2.7rem);
+  letter-spacing: -0.05em;
+}
+
+.wallet-summary p,
+.shop-item-card p,
+.transaction-panel p {
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.wallet-summary svg {
+  color: var(--gold-2);
+}
+
+.wallet-stat-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.wallet-stat-row span {
+  display: grid;
+  gap: 4px;
+  min-width: 130px;
+  padding: 12px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 16px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.wallet-stat-row strong {
+  color: #fff2dc;
+  font-size: 1.4rem;
+}
+
+.shop-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.shop-tabs button {
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  padding: 10px 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.shop-tabs button.active {
+  color: #211006;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.shop-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.shop-item-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  padding: 18px;
+}
+
+.shop-item-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.shop-price {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  width: fit-content;
+  margin: 12px 0;
+  padding: 8px 10px;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 999px;
+  color: var(--gold-2);
+  background: rgba(214, 167, 95, 0.08);
+  font-weight: 900;
+}
+
+.transaction-panel {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+}
+
+.transaction-list {
+  display: grid;
+  gap: 10px;
+}
+
+.transaction-list article {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 18px;
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.transaction-list strong,
+.transaction-list span,
+.transaction-list small {
+  display: block;
+}
+
+.transaction-list strong {
+  color: #fff2dc;
+}
+
+.transaction-list span,
+.transaction-list small {
+  color: var(--muted);
+}
+
+.transaction-list article.earn strong,
+.transaction-list article.refund strong {
+  color: var(--gold-2);
+}
+
+.transaction-list article.spend strong {
+  color: #ffb4b4;
+}
+
+@media (max-width: 900px) {
+  .wallet-summary,
+  .shop-grid,
+  .shop-item-card {
+    grid-template-columns: 1fr;
+  }
+
+  .transaction-list article {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

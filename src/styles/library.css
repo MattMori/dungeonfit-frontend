@@ -1,0 +1,228 @@
+.library-page {
+  display: grid;
+  gap: 22px;
+}
+
+.library-hero-panel,
+.campaign-filters,
+.library-campaign-card,
+.saved-callout {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.14), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.2), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.library-hero-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(22px, 4vw, 34px);
+}
+
+.library-hero-panel h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.library-hero-panel p,
+.library-campaign-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.library-hero-icons {
+  display: flex;
+  gap: 10px;
+  color: var(--gold-2);
+}
+
+.library-hero-icons svg {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 16px;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.library-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.library-tabs button,
+.save-campaign-button {
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 999px;
+  padding: 10px 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.library-tabs button.active,
+.save-campaign-button.saved {
+  color: #211006;
+  background: linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.campaign-filters {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) auto;
+  gap: 12px;
+  align-items: end;
+  padding: 16px;
+}
+
+.campaign-filters label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.campaign-filters input,
+.campaign-filters select {
+  width: 100%;
+  border: 1px solid rgba(214, 167, 95, 0.22);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.library-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.library-campaign-card {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px;
+}
+
+.library-card-cover {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 22px;
+  color: var(--gold-2);
+  background:
+    radial-gradient(circle at 50% 18%, rgba(244, 210, 138, 0.2), transparent 28%),
+    linear-gradient(180deg, rgba(126, 27, 37, 0.34), rgba(9, 6, 5, 0.9));
+}
+
+.library-card-cover span {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+}
+
+.library-card-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.library-card-content h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  font-size: clamp(1.7rem, 4vw, 3rem);
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.save-campaign-button {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 14px;
+}
+
+.library-meta-row,
+.library-tags,
+.library-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 14px;
+}
+
+.library-meta-row span,
+.library-tags span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 8px 10px;
+  border: 1px solid rgba(214, 167, 95, 0.18);
+  border-radius: 999px;
+  color: var(--gold-2);
+  background: rgba(214, 167, 95, 0.08);
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.library-tags span {
+  color: var(--muted);
+}
+
+.saved-callout {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px;
+  color: var(--gold-2);
+}
+
+.saved-callout strong,
+.saved-callout span {
+  display: block;
+}
+
+.saved-callout span {
+  color: var(--muted);
+  margin-top: 2px;
+}
+
+.saved-inline {
+  color: var(--gold-2);
+}
+
+@media (max-width: 1120px) {
+  .library-grid,
+  .campaign-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .library-campaign-card,
+  .library-hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .library-card-cover {
+    min-height: 160px;
+  }
+}

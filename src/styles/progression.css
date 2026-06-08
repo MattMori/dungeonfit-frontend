@@ -1,0 +1,289 @@
+.progression-page {
+  display: grid;
+  gap: 22px;
+}
+
+.progression-hero,
+.progression-panel,
+.progression-confirm-panel,
+.level-up-status-card {
+  border: 1px solid rgba(214, 167, 95, 0.2);
+  border-radius: 30px;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(214, 167, 95, 0.15), transparent 34%),
+    radial-gradient(circle at 88% 18%, rgba(126, 27, 37, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(47, 34, 27, 0.94), rgba(12, 8, 7, 0.94));
+  box-shadow: var(--shadow);
+}
+
+.progression-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: clamp(24px, 5vw, 42px);
+}
+
+.progression-hero h1,
+.progression-panel h2,
+.progression-confirm-panel h2,
+.level-up-status-card h2 {
+  margin: 8px 0 0;
+  color: #fff2dc;
+  font-family: Cinzel, Georgia, serif;
+  line-height: 1;
+}
+
+.progression-hero h1 {
+  font-size: clamp(2.6rem, 6vw, 5.6rem);
+  letter-spacing: -0.07em;
+}
+
+.progression-panel h2,
+.progression-confirm-panel h2,
+.level-up-status-card h2 {
+  font-size: clamp(1.7rem, 4vw, 3.2rem);
+  letter-spacing: -0.05em;
+}
+
+.progression-hero p,
+.progression-panel p,
+.progression-confirm-panel p,
+.level-up-status-card p,
+.progression-bar-box small {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.progression-level-orb {
+  width: 150px;
+  height: 150px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  border-radius: 42px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.progression-level-orb span,
+.progression-level-orb strong {
+  display: block;
+}
+
+.progression-level-orb span {
+  font-weight: 950;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+}
+
+.progression-level-orb strong {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 4.2rem;
+  line-height: 0.8;
+}
+
+.progression-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+  gap: 18px;
+}
+
+.progression-panel {
+  display: grid;
+  gap: 16px;
+  padding: 22px;
+}
+
+.progression-panel.main {
+  min-height: 320px;
+}
+
+.progression-bar-box {
+  display: grid;
+  gap: 9px;
+  margin-top: 10px;
+}
+
+.progression-bar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.progression-bar-header strong {
+  color: #fff2dc;
+}
+
+.progression-bar-header span {
+  color: var(--gold-2);
+  font-weight: 900;
+}
+
+.progression-bar-track {
+  overflow: hidden;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.progression-bar-track div {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--gold), var(--gold-2));
+}
+
+.level-up-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.level-up-preview-grid article {
+  display: grid;
+  gap: 6px;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 18px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.level-up-preview-grid svg {
+  color: var(--gold-2);
+}
+
+.level-up-preview-grid strong {
+  color: #fff2dc;
+  font-size: 1.2rem;
+}
+
+.unlocked-feature-list {
+  display: grid;
+  gap: 10px;
+}
+
+.unlocked-feature-list article {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 18px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.16);
+  font-weight: 900;
+}
+
+.unlocked-feature-list svg {
+  color: var(--gold-2);
+}
+
+.level-up-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.level-up-choice-grid label {
+  display: grid;
+  gap: 7px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.level-up-choice-grid input {
+  width: 100%;
+  border: 1px solid rgba(214, 167, 95, 0.22);
+  border-radius: 14px;
+  padding: 12px 14px;
+  color: #fff2dc;
+  background: rgba(0, 0, 0, 0.22);
+  outline: none;
+}
+
+.progression-confirm-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 22px;
+}
+
+.level-up-history-list {
+  display: grid;
+  gap: 10px;
+}
+
+.level-up-history-list article {
+  display: grid;
+  gap: 4px;
+  padding: 14px;
+  border: 1px solid rgba(214, 167, 95, 0.14);
+  border-radius: 18px;
+  color: var(--muted);
+  background: rgba(0, 0, 0, 0.16);
+}
+
+.level-up-history-list strong {
+  color: #fff2dc;
+}
+
+.level-up-status-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+}
+
+.level-up-status-card.available {
+  border-color: rgba(214, 167, 95, 0.42);
+}
+
+.level-up-status-icon {
+  width: 72px;
+  height: 72px;
+  display: grid;
+  place-items: center;
+  border-radius: 24px;
+  color: #211006;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(255, 255, 255, 0.36), transparent 26%),
+    linear-gradient(180deg, var(--gold-2), var(--gold));
+}
+
+.level-up-status-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+@media (max-width: 900px) {
+  .progression-hero,
+  .progression-grid,
+  .progression-confirm-panel,
+  .level-up-status-card {
+    grid-template-columns: 1fr;
+  }
+
+  .progression-confirm-panel {
+    align-items: flex-start;
+  }
+
+  .level-up-preview-grid,
+  .level-up-choice-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .progression-level-orb {
+    width: 120px;
+    height: 120px;
+    border-radius: 34px;
+  }
+}
