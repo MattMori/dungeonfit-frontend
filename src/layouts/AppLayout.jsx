@@ -9,6 +9,8 @@ import {
   Crown,
   Flame,
   History,
+  LogOut,
+  Menu,
   Package,
   ScrollText,
   Shield,
@@ -18,115 +20,136 @@ import {
   Trophy,
   User,
   WandSparkles,
+  X,
 } from "lucide-react";
 
 import { useAuth } from "../context/AuthContext";
 
-const menuItems = [
+const menuGroups = [
   {
-    label: "A Taverna",
-    path: "/taverna",
-    icon: BookOpen,
+    title: "Jornada",
+    items: [
+      {
+        label: "A Taverna",
+        path: "/taverna",
+        icon: BookOpen,
+      },
+      {
+        label: "Primeira Jornada",
+        path: "/primeira-jornada",
+        icon: Sparkles,
+      },
+      {
+        label: "Rotina",
+        path: "/rotina",
+        icon: Flame,
+      },
+      {
+        label: "Boss Semanal",
+        path: "/boss-semanal",
+        icon: Skull,
+      },
+    ],
   },
   {
-    label: "Primeira Jornada",
-    path: "/primeira-jornada",
-    icon: Sparkles,
+    title: "Campanhas",
+    items: [
+      {
+        label: "Campanhas",
+        path: "/campanhas",
+        icon: BookOpen,
+      },
+      {
+        label: "Salvas",
+        path: "/campanhas/salvas",
+        icon: Bookmark,
+      },
+      {
+        label: "Modo Mestre",
+        path: "/minhas-campanhas",
+        icon: Crown,
+      },
+      {
+        label: "Missões Reais",
+        path: "/missoes",
+        icon: ScrollText,
+      },
+      {
+        label: "Crônicas",
+        path: "/cronicas",
+        icon: History,
+      },
+    ],
   },
   {
-    label: "Meu Perfil",
-    path: "/meu-perfil",
-    icon: User,
+    title: "Personagem",
+    items: [
+      {
+        label: "Ficha",
+        path: "/personagem",
+        icon: Shield,
+      },
+      {
+        label: "Inventário",
+        path: "/inventario",
+        icon: Package,
+      },
+      {
+        label: "Loja",
+        path: "/loja",
+        icon: ShoppingBag,
+      },
+      {
+        label: "Carteira",
+        path: "/carteira",
+        icon: Coins,
+      },
+      {
+        label: "Grimório",
+        path: "/grimorio",
+        icon: WandSparkles,
+      },
+      {
+        label: "Relíquias",
+        path: "/reliquias",
+        icon: Sparkles,
+      },
+      {
+        label: "Evolução",
+        path: "/evolucao",
+        icon: Flame,
+      },
+    ],
   },
   {
-    label: "Rotina",
-    path: "/rotina",
-    icon: Flame,
-  },
-  {
-    label: "Boss Semanal",
-    path: "/boss-semanal",
-    icon: Skull,
-  },
-  {
-    label: "Campanhas",
-    path: "/campanhas",
-    icon: BookOpen,
-  },
-  {
-    label: "Salvas",
-    path: "/campanhas/salvas",
-    icon: Bookmark,
-  },
-  {
-    label: "Modo Mestre",
-    path: "/minhas-campanhas",
-    icon: Crown,
-  },
-  {
-    label: "Guildas",
-    path: "/guildas",
-    icon: Castle,
-  },
-  {
-    label: "Ficha",
-    path: "/personagem",
-    icon: Shield,
-  },
-  {
-    label: "Inventário",
-    path: "/inventario",
-    icon: Package,
-  },
-  {
-    label: "Loja",
-    path: "/loja",
-    icon: ShoppingBag,
-  },
-  {
-    label: "Carteira",
-    path: "/carteira",
-    icon: Coins,
-  },
-  {
-    label: "Grimório",
-    path: "/grimorio",
-    icon: WandSparkles,
-  },
-  {
-    label: "Missões Reais",
-    path: "/missoes",
-    icon: ScrollText,
-  },
-  {
-    label: "Crônicas",
-    path: "/cronicas",
-    icon: History,
-  },
-  {
-    label: "Relíquias",
-    path: "/reliquias",
-    icon: Sparkles,
-  },
-  {
-    label: "Evolução",
-    path: "/evolucao",
-    icon: Flame,
-  },
-  {
-    label: "Ranking",
-    path: "/ranking",
-    icon: Trophy,
-  },
-  {
-    label: "Notificações",
-    path: "/notificacoes",
-    icon: Bell,
-  },
-  {
-    label: "Conta",
-    path: "/conta",
-    icon: User,
+    title: "Social",
+    items: [
+      {
+        label: "Meu Perfil",
+        path: "/meu-perfil",
+        icon: User,
+      },
+      {
+        label: "Guildas",
+        path: "/guildas",
+        icon: Castle,
+      },
+      {
+        label: "Ranking",
+        path: "/ranking",
+        icon: Trophy,
+      },
+      {
+        label: "Notificações",
+        path: "/notificacoes",
+        icon: Bell,
+      },
+      {
+        label: "Conta",
+        path: "/conta",
+        icon: User,
+      },
+    ],
   },
 ];
 
@@ -216,18 +239,26 @@ export default function AppLayout() {
           <span>A campanha continua.</span>
         </div>
 
-        <nav className="nav-list">
-          {menuItems.map(({ path, label, icon: Icon }) => (
-            <NavLink
-              key={path}
-              to={path}
-              className={({ isActive }) =>
-                isActive ? "nav-item active" : "nav-item"
-              }
-            >
-              <Icon size={18} />
-              <span>{label}</span>
-            </NavLink>
+        <nav className="nav-list grouped-nav-list">
+          {menuGroups.map((group) => (
+            <div className="nav-group" key={group.title}>
+              <span className="nav-group-title">{group.title}</span>
+
+              <div className="nav-group-items">
+                {group.items.map(({ path, label, icon: Icon }) => (
+                  <NavLink
+                    key={path}
+                    to={path}
+                    className={({ isActive }) =>
+                      isActive ? "nav-item active" : "nav-item"
+                    }
+                  >
+                    <Icon size={17} />
+                    <span>{label}</span>
+                  </NavLink>
+                ))}
+              </div>
+            </div>
           ))}
         </nav>
 

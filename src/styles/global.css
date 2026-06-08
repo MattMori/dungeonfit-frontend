@@ -1297,3 +1297,56 @@ th {
     max-width: 122px;
   }
 }
+
+.grouped-nav-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.nav-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.nav-group-title {
+  padding-inline: 14px;
+  color: rgba(243, 213, 159, 0.48);
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.nav-group-items {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nav-item {
+  min-height: 38px;
+}
+
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(214, 167, 95, 0.38) transparent;
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(214, 167, 95, 0.28);
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background: rgba(214, 167, 95, 0.48);
+}

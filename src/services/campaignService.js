@@ -33,3 +33,10 @@ export async function completeCampaignRealMission(slug) {
   const response = await api.post(`/campaigns/${slug}/complete-real-mission`);
   return unwrap(response);
 }
+export async function completeRealMission(payload = {}) {
+  const response = await api.post(
+    "/first-journey/complete-starter-mission",
+    payload,
+  );
+  return response?.data?.data || response?.data;
+}
